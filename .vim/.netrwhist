@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/data/home/lanceqli/svn/sconn_proj/trunk/sconn2/service_server_newrb'
+let g:netrw_dirhist_2='/tmp/0x817_lanceqli'
+let g:netrw_dirhist_3='/data/home/lanceqli/svn/sconn_proj/trunk/new_sconn/server'
+let g:netrw_dirhist_4='/tmp/cedricsun/conn/20141212/unimsg/conn_conf'
