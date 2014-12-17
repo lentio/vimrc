@@ -1,6 +1,3 @@
-set tags+=/home/lanceqli/svn/bsrv_conn2_rep/tags
-"set tags+=/home/lanceqli/svn/cryptsrv_proj/.tags
-
 syntax on       "开启文件类型侦测
 set tags+=./tags;./.tags;
 set autochdir
