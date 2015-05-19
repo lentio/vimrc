@@ -1,4 +1,3 @@
-syntax on       "¿ªÆôÎÄ¼şÀàĞÍÕì²â
 set tags+=./tags;./.tags;
 set autochdir
 set nocompatible
@@ -18,15 +17,15 @@ set termencoding=gb18030
 set cindent
 set autoindent
 set go+=a
-set incsearch   "ÔöÁ¿Ê½ËÑË÷
-set hlsearch    "¸ßÁÁËÑË÷
-set number      "ÏÔÊ¾ĞĞÊı±êÊ¾
-set shiftwidth=4   "»»ĞĞÊ±ĞĞ¼ä½»´íÊ¹ÓÃ4¸ö¿Õ¸ñ
-set laststatus=2   "¿ªÆô×´Ì¬À¸ĞÅÏ¢
+set incsearch   "å¢é‡å¼æœç´¢
+set hlsearch    "é«˜äº®æœç´¢
+set number      "æ˜¾ç¤ºè¡Œæ•°æ ‡ç¤º
+set shiftwidth=4   "æ¢è¡Œæ—¶è¡Œé—´äº¤é”™ä½¿ç”¨4ä¸ªç©ºæ ¼
+set laststatus=2   "å¼€å¯çŠ¶æ€æ ä¿¡æ¯
 set backspace=indent,eol,start
-set clipboard+=unnamed    "Óëwindows¹²Ïí¼ôÌù°å
+set clipboard+=unnamed    "ä¸windowså…±äº«å‰ªè´´æ¿
 
-"ÉèÖÃtabºÍ¿Õ¸ñÑùÊ½
+"è®¾ç½®tabå’Œç©ºæ ¼æ ·å¼
 set tabstop=4
 set softtabstop=4
 set smarttab
@@ -39,11 +38,12 @@ if has("autocmd")
     autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
-"ÓÒÏÂ½ÇÏÔÊ¾¹â±êÎ»ÖÃµÄ×´Ì¬ĞĞ
+"å³ä¸‹è§’æ˜¾ç¤ºå…‰æ ‡ä½ç½®çš„çŠ¶æ€è¡Œ
 "set ruler
 
-syntax enable   "´ò¿ªÓï·¨¸ßÁÁ
+syntax enable   "æ‰“å¼€è¯­æ³•é«˜äº®
 set t_Co=256
+let g:solarized_termcolors=256
 colorscheme solarized
 
 if has('gui_running')
@@ -52,14 +52,13 @@ else
     set background=dark
 endif
 
-highlight NoText     ctermfg=247 guifg=#a73111 cterm=bold gui=bold
-highlight SpecialKey ctermfg=darkgrey  guifg=#654321
-highlight Comment    ctermfg=darkgrey
-highlight Constant   ctermfg=darkblue
-highlight String   ctermfg=darkblue
-highlight Number   ctermfg=red
-highlight StatusLine cterm=bold  ctermfg=yellow ctermbg=blue
-
+"highlight NoText     ctermfg=247 guifg=#a73111 cterm=bold gui=bold
+"highlight SpecialKey ctermfg=darkgrey  guifg=#654321
+"highlight Comment    ctermfg=6
+"highlight Constant   ctermfg=darkblue
+"highlight String   ctermfg=darkblue
+"highlight Number   ctermfg=red
+"highlight StatusLine cterm=bold  ctermfg=yellow ctermbg=blue
 "hi link cComment Function
 "hi Search ctermfg=yellow ctermbg=green
 "ctermbg=lightgrey
@@ -67,8 +66,7 @@ highlight StatusLine cterm=bold  ctermfg=yellow ctermbg=blue
 "highlight WhitespaceEOL ctermbg=red guibg=red
 "match WhitespaceEOL /\s\+$/
 
-
-" »ñÈ¡µ±Ç°Â·¾¶£¬½«$HOME×ª»¯Îª~
+" è·å–å½“å‰è·¯å¾„ï¼Œå°†$HOMEè½¬åŒ–ä¸º~
 function! CurDir()
     let curdir = getcwd()
     return curdir
@@ -79,17 +77,17 @@ set statusline=[%n]\ %f%m%r%h\ \|\ \ pwd:\ %{CurDir()}\ \ \|%=\|\ %l,%c\ %p%%\ \
 " Tag list (ctags)
 " """"""""""""""""""""""""""""""
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
-let Tlist_Show_One_File = 1            "²»Í¬Ê±ÏÔÊ¾¶à¸öÎÄ¼şµÄtag£¬Ö»ÏÔÊ¾µ±Ç°ÎÄ¼şµÄ
-let Tlist_Exit_OnlyWindow = 1          "Èç¹ûtaglnst´°¿ÚÊÇ×îºóÒ»¸ö´°¿Ú£¬ÔòÍË³övim
-let Tlist_Use_Right_Window = 1         "ÔÚÓÒ²à´°¿ÚÖĞÏÔÊ¾taglist´°¿Ú 
-let Tlist_File_Fold_Auto_Close=1       "·Çµ±Ç°ÎÄ¼ş£¬º¯ÊıÁĞ±íÕÛµşÒş²Ø
-let Tlist_Process_File_Always=0        "ÊÇ·ñÒ»Ö±´¦Àítags.1:´¦Àí;0:²»´¦Àí¡£²»ÊÇÒ»Ö±ÊµÊ±¸üĞÂtags£¬ÒòÎªÃ»ÓĞ±ØÒª
+let Tlist_Show_One_File = 1            "ä¸åŒæ—¶æ˜¾ç¤ºå¤šä¸ªæ–‡ä»¶çš„tagï¼Œåªæ˜¾ç¤ºå½“å‰æ–‡ä»¶çš„
+let Tlist_Exit_OnlyWindow = 1          "å¦‚æœtaglnstçª—å£æ˜¯æœ€åä¸€ä¸ªçª—å£ï¼Œåˆ™é€€å‡ºvim
+let Tlist_Use_Right_Window = 1         "åœ¨å³ä¾§çª—å£ä¸­æ˜¾ç¤ºtaglistçª—å£ 
+let Tlist_File_Fold_Auto_Close=1       "éå½“å‰æ–‡ä»¶ï¼Œå‡½æ•°åˆ—è¡¨æŠ˜å éšè—
+let Tlist_Process_File_Always=0        "æ˜¯å¦ä¸€ç›´å¤„ç†tags.1:å¤„ç†;0:ä¸å¤„ç†ã€‚ä¸æ˜¯ä¸€ç›´å®æ—¶æ›´æ–°tagsï¼Œå› ä¸ºæ²¡æœ‰å¿…è¦
 let Tlist_Inc_Winwidth=0
 
 map <silent> <F9> :TlistToggle<cr>
 map <silent> <F10> :NERDTree<cr>
 map <silent> <F11> :close<cr>
 
-"""""""""""""ÉèÖÃ¿ªÆôctags"""""""""""""     
+"""""""""""""è®¾ç½®å¼€å¯ctags"""""""""""""     
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
